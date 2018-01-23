@@ -10,6 +10,10 @@ type Color struct {
 	R, G, B, A int
 }
 
+func MakeTransparent() Color {
+	return Color{int(0), int(0), int(0), int(0)}
+}
+
 func MakeColor(c color.Color) Color {
 	r, g, b, a := c.RGBA()
 	return Color{int(r / 257), int(g / 257), int(b / 257), int(a / 257)}

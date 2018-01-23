@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/fogleman/primitive/primitive"
+	"github.com/mstrazds/primitive/primitive"
 	"github.com/nfnt/resize"
 )
 
@@ -148,6 +148,8 @@ func main() {
 	var bg primitive.Color
 	if Background == "" {
 		bg = primitive.MakeColor(primitive.AverageImageColor(input))
+	} else if Background == "transparent" {
+		bg = primitive.MakeTransparent()
 	} else {
 		bg = primitive.MakeHexColor(Background)
 	}
